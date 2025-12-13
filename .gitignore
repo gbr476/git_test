@@ -4,3 +4,15 @@ result-*
 
 # Ignore automatically generated direnv output
 .direnv
+
+# 1. Ignore EVERYTHING in the current directory and all subdirectories
+#*
+
+# 2. Re-include all files in the root directory (so we can un-ignore others)
+#!/*
+
+# 3. Un-ignore all files with the .pub extension (including in subdirectories)
+#!*.pub
+
+# 4. Un-ignore all directories (so Git can traverse them to find .pub files)
+#!*/
