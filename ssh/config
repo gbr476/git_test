@@ -1,0 +1,54 @@
+Host oracle-test
+Hostname 129.146.82.165
+Port 22
+User ubuntu
+IdentityFile ~/.ssh/ssh-key-2022-03-11.key
+
+    Host switch
+		Hostname 192.168.0.1
+        HostKeyAlgorithms +ssh-rsa
+        PubkeyAcceptedAlgorithms +ssh-rsa
+        KexAlgorithms +diffie-hellman-group1-sha1
+        MACs +hmac-sha1
+		Port 22
+		User geoff-admin
+		IdentityFile C:\Users\gbr47\.ssh/id_rsa_sha2
+		
+	Host 192.168.0.
+        HostKeyAlgorithms +ssh-rsa
+        KexAlgorithms +diffie-hellman-group1-sha1
+		Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+		Port 22
+		User geoff-admin
+		IdentityFile ~/.ssh/id_rsa_sha1
+		PreferredAuthentications publickey
+		# PreferredAuthentications publickey, password
+		
+	Host sw	
+		Hostname 192.168.0.6
+		HostKeyAlgorithms +ssh-dss
+        KexAlgorithms +diffie-hellman-group1-sha1
+		Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+		PreferredAuthentications publickey,password
+		MACs +hmac-sha1-96
+		PubkeyAcceptedAlgorithms +ssh-rsa
+		Port 22
+		User geoff-admin
+		IdentityFile C:\Users\gbr47\.ssh/id_rsa_sha2
+
+# Personal account
+Host github_gbr476  # Alias for gbr476@gmail.com repos
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/gh_rsa_gbr476
+  
+Host github_gbr476-1  # Alias for gbr476@gmail.com repos
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+Host nixos_router
+	Hostname 192.168.0.1
+	Port 22
+	User geoff-admin
+	IdentityFile ~/.ssh/id_rsa_sha2
